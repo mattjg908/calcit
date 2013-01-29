@@ -22,11 +22,11 @@ end
 # advanced calculator functions -- Stephen Bae
 # ======================
 
-def power (n1, n2)
+def power(n1, n2)
   n1 ** n2
 end
 
-def squareroot (n1)
+def squareroot(n1)
   n1 ** 0.5
 end
 
@@ -37,15 +37,10 @@ end
 
 print "Would you like to use a basic calculator or an advanced calculator? Press 1 for basic, 2 for advanced. "
   answer = gets.chomp.to_i
-  # while answer != 1 || 2
-  #   puts "I don't understand. Please answer '1' or '2'. "
-  # answer = gets.chomp.to_i
-  # end
 
   if answer == 1
-    print "Do you want to add, subtract, multiply or divide?"
+    print "Do you want to add, subtract, multiply or divide? "
     answer = gets.chomp.downcase
-    if answer == "add"
 
       print "What's the first number you want to use? "
       number1 = gets.chomp.to_i
@@ -53,27 +48,40 @@ print "Would you like to use a basic calculator or an advanced calculator? Press
       print "What's the second number you want to use? "
       number2 = gets.chomp.to_i
 
-      puts add(number1,number2)
-    end
+  case answer
+    when "add"
+      result = add(number1, number2)
+    when "subtract"
+      result = subtract(number1, number2)
+    when "multiply"
+      result = multiply(number1, number2)
+    when "divide"
+      result = divide(number1, number2)
+  end
 
-      # case answer
-      #   when add
-      #     add(number1, number2)
-      #   when subtract
-      #     subtract(number1, number2)
-      #   when multiply
-      #     multiply(number1, number2)
-      #   when divide
-      #     divide(number1, number2)
-      #   end
   else
-    print "Do you want to raise to a power, or square root?"
-    advanced = gets.chomp
-    print "What numbers would you like to use?"
-    numbers = gets.chomp.to_i
-      if "power"
-        #power function
+
+    print "Do you want to raise to a power (type RAISE), or square root? (type SQRT) "
+
+    advanced = gets.chomp.downcase
+
+      if advanced == "sqrt"
+        print "What number do you want to square? "
+        number1 = gets.chomp.to_i
+
+        result = squareroot(number1)
+      elsif advanced == "raise"
+        print "What's the base number? "
+        number1 = gets.chomp.to_i
+
+        print "Raise #{number1} to what power? "
+        number2 = gets.chomp.to_i
+
+        result = power(number1, number2)
       else
-        #square root function
+        print "Woops. Looks like you didn't enter the right thing. "
       end
+
+  puts "Your answer is #{result}!"
+
   end

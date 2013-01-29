@@ -30,65 +30,82 @@ def squareroot(n1)
   n1 ** 0.5
 end
 
-
 # ======================
-# calculator interface -- Matt Galvin
+# basic calc menu
 # ======================
 
-print "Would you like to use a basic calculator or an advanced calculator? Press 1 for basic, 2 for advanced. "
-  answer = gets.chomp.to_i
+def basic_calc
+  print "Do you want to (a)dd, (s)ubtract, (m)ultiply or (d)ivide? "
+  answer = gets.chomp.downcase
 
-  while ( answer != 1 ) && ( answer != 2 )
-    puts "Stop being a loser. Please Enter '1' or '2'."
-    answer = gets.chomp.to_i
-  end
+  print "What's the first number you want to use? "
+  number1 = gets.chomp.to_f
 
-  if answer == 1
-    print "Do you want to add, subtract, multiply or divide? "
-    answer = gets.chomp.downcase
-
-      print "What's the first number you want to use? "
-      number1 = gets.chomp.to_i
-
-      print "What's the second number you want to use? "
-      number2 = gets.chomp.to_i
+  print "What's the second number you want to use? "
+  number2 = gets.chomp.to_f
 
   case answer
-    when "add"
+    when "a"
       result = add(number1, number2)
-    when "subtract"
+    when "s"
       result = subtract(number1, number2)
-    when "multiply"
+    when "m"
       result = multiply(number1, number2)
-    when "divide"
+    when "d"
       result = divide(number1, number2)
   end
 
   puts "Your answer is #{result}!"
 
-  elsif answer == 2
+end
 
-    print "Do you want to raise to a power (type RAISE), or square root? (type SQRT) "
 
-    advanced = gets.chomp.downcase
+# ======================
+# advanced calc menu
+# ======================
 
-      if advanced == "sqrt"
-        print "What number do you want to square? "
-        number1 = gets.chomp.to_i
+def adv_calc
+  print "Do you want to (r)aise to a power, or (s)quare root? "
 
-        result = squareroot(number1)
-      elsif advanced == "raise"
-        print "What's the base number? "
-        number1 = gets.chomp.to_i
+  advanced = gets.chomp.downcase
 
-        print "Raise #{number1} to what power? "
-        number2 = gets.chomp.to_i
+  if advanced == "s"
+    print "What number do you want to square? "
+    number1 = gets.chomp.to_f
 
-        result = power(number1, number2)
-      else
-        print "Woops. Looks like you didn't enter the right thing. "
-      end
+    result = squareroot(number1)
+  elsif advanced == "r"
+    print "What's the base number? "
+    number1 = gets.chomp.to_f
+
+    print "Raise #{number1} to what power? "
+    number2 = gets.chomp.to_f
+
+    result = power(number1, number2)
+
+  end
 
   puts "Your answer is #{result}!"
 
-  end
+end
+
+
+# ======================
+# calculator interface  # DOESN'T WORK RIGHT NOW
+# ======================
+
+def main_menu
+  puts "Would you like to use a basic calculator or an advanced calculator?"
+  print "Press 1 for basic, 2 for advanced, or 3 to quit."
+  gets.chomp.to_i
+end
+
+answer = main_menu
+
+if answer == 1
+  basic_calc
+elsif answer == 2
+  adv_calc
+else
+
+end

@@ -1,5 +1,5 @@
 # ======================
-# Basic Calculator Functions
+# Basic Calculator Functions -- Bryan Reid
 # ======================
 
 def add(x,y)
@@ -18,7 +18,14 @@ def divide(x,y)
   x.to_f / y.to_f
 end
 
-add(3,2)
-subtract(3,2)
-multiply(3,2)
-divide(3,2)
+# ======================
+# advanced calculator functions -- Stephen Bae
+# ======================
+
+def power (n1, n2)
+  n1 ** n2
+end
+
+def squareroot (n1)
+  n1 ** 0.5
+end

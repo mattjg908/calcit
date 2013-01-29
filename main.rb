@@ -1,3 +1,21 @@
+# BMI -- Matt Galvin
+
+def bmi(weight, height)
+  (weight*703/height**2)
+end
+
+print "What is your body weight in pounds? "
+  weight = gets.chomp.to_f
+print "What is your height in inches? "
+  height = gets.chomp.to_f
+body_mass_index = bmi(weight, height)
+puts "Your body mass index is #{body_mass_index}."
+
+
+
+
+
+
 # ======================
 # Basic Calculator Functions -- Bryan Reid
 # ======================

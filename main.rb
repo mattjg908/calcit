@@ -1,3 +1,33 @@
+require 'rainbow'
+
+#mortgage monthly
+def mortgage(p, i, n)
+  x = (1 + i)
+  x = x**n
+
+  y = i * x
+  y = y / (x - 1)
+
+  y = y * p
+
+end
+
+puts "To calculate your monthly payment for your mortgage,
+write the numbers of your (p)rincipal of the loan, (i)nterest rate, and (n)umber of payments"
+
+print "p: "
+p = gets.chomp.to_i
+print "i: "
+i = gets.chomp.to_f
+print "n: "
+n = gets.chomp.to_i
+
+puts "Your monthly payment would be #{mortgage(p, i, n)}"
+
+
+
+
+
 # ======================
 # Basic Calculator Functions -- Bryan Reid
 # ======================
@@ -92,3 +122,36 @@ print "Would you like to use a basic calculator or an advanced calculator? Press
   puts "Your answer is #{result}!"
 
   end
+
+
+def mortgage(p, i, n) # monthly
+  x = (1 + i)
+  x = x**n
+
+  y = i * x
+  y = y / (x - 1)
+
+  y = y * p
+
+end
+
+puts "To calculate your monthly payment for your mortgage,
+write the numbers of your (p)rincipal of the loan, (i)nterest rate, and (n)umber of payments"
+
+print "p: "
+p = gets.chomp.to_i
+print "i: "
+i = gets.chomp.to_f
+print "n: "
+n = gets.chomp.to_i
+
+puts "Your monthly payment would be #{mortgage(p, i, n)}"
+
+
+
+
+
+
+
+
+

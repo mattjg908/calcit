@@ -1,3 +1,4 @@
+
 require 'rainbow'
 
 #mortgage monthly
@@ -12,17 +13,32 @@ def mortgage(p, i, n)
 
 end
 
-puts "To calculate your monthly payment for your mortgage,
-write the numbers of your (p)rincipal of the loan, (i)nterest rate, and (n)umber of payments"
+# puts "To calculate your monthly payment for your mortgage,
+# write the numbers of your (p)rincipal of the loan, (i)nterest rate, and (n)umber of payments"
 
-print "p: "
-p = gets.chomp.to_i
-print "i: "
-i = gets.chomp.to_f
-print "n: "
-n = gets.chomp.to_i
+# print "p: "
+# p = gets.chomp.to_i
+# print "i: "
+# i = gets.chomp.to_f
+# print "n: "
+# n = gets.chomp.to_i
 
-puts "Your monthly payment would be #{mortgage(p, i, n)}"
+# puts "Your monthly payment would be #{mortgage(p, i, n)}"
+
+# BMI -- Matt Galvin
+
+def bmi(weight, height)
+  (weight*703/height**2)
+end
+
+# print "What is your body weight in pounds? "
+#   weight = gets.chomp.to_f
+# print "What is your height in inches? "
+#   height = gets.chomp.to_f
+# body_mass_index = bmi(weight, height)
+# puts "Your body mass index is #{body_mass_index}."
+
+
 
 
 
@@ -63,7 +79,6 @@ end
 
 # ======================
 # calculator interface -- Matt Galvin
-# ======================
 
 print "Would you like to use a basic calculator or an advanced calculator? Press 1 for basic, 2 for advanced. "
   answer = gets.chomp.to_i

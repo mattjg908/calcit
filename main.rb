@@ -55,6 +55,11 @@ end
 print "Would you like to use a basic calculator or an advanced calculator? Press 1 for basic, 2 for advanced. "
   answer = gets.chomp.to_i
 
+  while ( answer != 1 ) && ( answer != 2 )
+    puts "Stop being a loser. Please Enter '1' or '2'."
+    answer = gets.chomp.to_i
+  end
+
   if answer == 1
     print "Do you want to add, subtract, multiply or divide? "
     answer = gets.chomp.downcase
@@ -76,7 +81,9 @@ print "Would you like to use a basic calculator or an advanced calculator? Press
       result = divide(number1, number2)
   end
 
-  else
+  puts "Your answer is #{result}!"
+
+  elsif answer == 2
 
     print "Do you want to raise to a power (type RAISE), or square root? (type SQRT) "
 

@@ -61,5 +61,3 @@ print "Would you like to use a basic calculator or an advacnced calculator? Pres
         #square root function
       end
   end
-=======
-

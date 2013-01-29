@@ -33,7 +33,7 @@ end
 
 
 # calculator interface -- Matt Galvin
-print "Would you like to use a basic calculator or an advacnced calculator? Press 1 for basic, 2 for advanced. "
+print "Would you like to use a basic calculator or an advanced calculator? Press 1 for basic, 2 for advanced. "
   answer = gets.chomp
   if answer == 1
     print "Do you want to add, subtract, multiply or divide?"

@@ -1,3 +1,5 @@
+require 'rainbow'
+
 # ======================
 # Basic Calculator Functions -- Bryan Reid
 # ======================
@@ -56,7 +58,7 @@ def basic_calc
   end
 
   puts "Your answer is #{result}!"
-
+  gets
 end
 
 
@@ -86,26 +88,35 @@ def adv_calc
   end
 
   puts "Your answer is #{result}!"
+  gets
 
 end
 
-
 # ======================
-# calculator interface  # DOESN'T WORK RIGHT NOW
+# super small main menu
 # ======================
 
 def main_menu
-  puts "Would you like to use a basic calculator or an advanced calculator?"
-  print "Press 1 for basic, 2 for advanced, or 3 to quit."
-  gets.chomp.to_i
+
 end
 
-answer = main_menu
+# ======================
+# calculator interface
+# ======================
 
-if answer == 1
-  basic_calc
-elsif answer == 2
-  adv_calc
-else
+puts "Welcome to this fantastic calculator."
+puts "=====================================".color(:red)
+puts "What would you like to do? Use the (b)asic calculator, (a)dvanced calculator, or (q)uit?"
+response = gets.chomp.downcase
 
+while response != "q"
+  case response
+  when "a"
+    adv_calc
+  when "b"
+    basic_calc
+  end
+  puts "=====================================".color(:red)
+  puts "What would you like to do? Use the (b)asic calculator, (a)dvanced calculator, or (q)uit?"
+  response = gets.chomp.downcase
 end
